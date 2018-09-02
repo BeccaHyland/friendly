@@ -1,3 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # get 'dashboards/index' <-- why?
+  root 'dashboards#index'
+
+  resources :people, only: [:index]
+  resources :group do
+    resources :people
+  end
+
+  resources :goals
+  resources :person_goals do
+    resources :goalposts
+  end
+
 end
