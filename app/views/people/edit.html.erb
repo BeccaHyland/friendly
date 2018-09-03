@@ -1,0 +1,6 @@
+<h2><%= "Edit #{@person.name}" %></h2>
+<p> Fill in the form below to make changes to this Person.</p>
+
+<%= render partial: "form" %>
+
+<%= link_to "Delete Person", person_path(@person), method: "delete" %>

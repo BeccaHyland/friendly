@@ -1,0 +1,20 @@
+<p> Need a new Group for the Person? Click <%= link_to "here", new_group_path %> to create a Group first.</p>
+
+<%= form_for @person do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :group_id %>
+  <%= f.collection_select :group_id, Group.all, :id, :title %>
+
+
+  <%= f.label :birthday %>
+  <%= f.date_field :birthday %>
+  <%= f.label :important_date_text %>
+  <%= f.text_field :important_date_text %>
+  <%= f.label :important_date %>
+  <%= f.date_field :important_date %>
+
+  <%= f.submit %>
+
+<% end %>
