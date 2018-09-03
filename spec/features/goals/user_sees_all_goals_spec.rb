@@ -21,7 +21,6 @@ describe 'user can see all goals' do
       person1 = goal1.people.create!(name: "Sara", group_id: "#{group.id}")
       person2 = goal1.people.create!(name: "George", group_id: "#{group.id}")
 
-      visit goals_path
       click_link "#{person1.name}"
 
       expect(current_path).to eq(person_path(person1))
