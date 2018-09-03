@@ -8,7 +8,7 @@
     <li class=person_<%= person.id %>>
       <%= link_to person.name, person_path(person) %>
       <%= person.group.title %>
-      <%= link_to "Edit Person", edit_group_person_path(person.group, person) %>
+      <%= link_to "Edit Person", edit_person_path(person) %>
     </li>
   <% end %>
 </ul>

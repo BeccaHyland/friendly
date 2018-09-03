@@ -37,7 +37,7 @@ describe 'user can see all people' do
         click_link "Edit Person"
       end
 
-      expect(current_path).to eq(edit_group_person_path(group, person1))
+      expect(current_path).to eq(edit_person_path(person1))
     end
   end
 end
