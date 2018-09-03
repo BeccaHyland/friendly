@@ -1,2 +1,10 @@
-<h1>People#show</h1>
-<p>Find me in app/views/people/show.html.erb</p>
+<h1><%= @person.name %></h1>
+
+<ul>
+  <li><%= "Group: #{@person.group.title}" %></li>
+  <% if @person.birthday %>
+    <li><%= "Birthday: #{@person.birthday.strftime('%m/%d/%Y')}" %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to "<< Back to My People", people_path %>

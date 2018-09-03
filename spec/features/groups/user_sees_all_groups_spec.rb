@@ -14,7 +14,7 @@ describe 'user can see all groups' do
       expect(page).to have_content("George")
     end
 
-    it 'links to a person show from person name under goal' do
+    it 'links to a person edit from person name under goal' do
       group = Group.create!(title: "Work Friends")
       person1 = group.people.create!(name: "Sara")
       person2 = group.people.create!(name: "George")
