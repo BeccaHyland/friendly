@@ -27,9 +27,7 @@ ActiveRecord::Schema.define(version: 20180902023837) do
 
   create_table "goals", force: :cascade do |t|
     t.string "description"
-    t.float "hours"
-    t.integer "number_of_times"
-    t.string "choice_of_unit"
+    t.string "frequency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

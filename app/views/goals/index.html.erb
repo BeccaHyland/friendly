@@ -6,8 +6,20 @@
 </div>
 
 <section class="page">
-  <h1>Welcome to your goals page</h1>
+  <h1>Welcome to Your Goals Page</h1>
   <p>Current Goals:</p>
+  <ul>
+    <% @goals.each do |goal| %>
+      <li class=goal_<%= goal.id %>>
+        <%= goal.description %>
+        <% goal.people.each do |person| %>
+          <ul> <%= link_to person.name, person_path(person) %> </ul>
+        <% end %>
+        <%= link_to "Edit", edit_goal_path(goal) %>
+        <%= link_to "Delete", goal_path(goal), method: "delete" %>
+      </li>
+    <% end %>
+  </ul>
 </section>
 
 <section class="goal collection">
