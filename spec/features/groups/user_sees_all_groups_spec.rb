@@ -8,7 +8,6 @@ describe 'user can see all groups' do
       person2 = group.people.create!(name: "George")
 
       visit groups_path
-      save_and_open_page
 
       expect(page).to have_content("Work Friends")
       expect(page).to have_content("Sara")
@@ -21,6 +20,7 @@ describe 'user can see all groups' do
       person2 = group.people.create!(name: "George")
 
       visit groups_path
+
       click_link "#{person1.name}"
 
       expect(current_path).to eq(edit_group_person_path(group, person1))
