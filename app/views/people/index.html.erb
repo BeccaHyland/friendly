@@ -1,8 +1,10 @@
 <h1>My People</h1>
+<%= link_to "Create New Person", new_person_path %>
+
 <p>Click on a Person to see current Goals.</p>
 
 <ul>
-  <% @people.each do |person| %>
+  <% @people.sort.each do |person| %>
     <li class=person_<%= person.id %>>
       <%= link_to person.name, person_path(person) %>
       <%= person.group.title %>
