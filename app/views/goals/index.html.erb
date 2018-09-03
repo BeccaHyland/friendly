@@ -13,7 +13,7 @@
       <li class=goal_<%= goal.id %>>
         <%= goal.description %>
         <% goal.people.each do |person| %>
-          <ul> <%= person.name %> </ul>
+          <ul> <%= link_to person.name, person_path(person) %> </ul>
         <% end %>
         <%= link_to "Edit", edit_goal_path(goal) %>
         <%= link_to "Delete", goal_path(goal), method: "delete" %>
