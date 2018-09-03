@@ -1,5 +1,6 @@
 <h2>Edit Group Name</h2>
 <p> Enter the new name for this Group.</p>
-<p> To change the People in this Group, click "My People" and choose a Person to edit.</p>
 
 <%= render partial: "form" %>
+
+<%= link_to "Delete Group and its People", group_path(@group), method: "delete" %>

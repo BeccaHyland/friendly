@@ -25,5 +25,17 @@ describe 'user can see all groups' do
 
       expect(current_path).to eq(edit_group_person_path(group, person1))
     end
+
+    it 'links to edit group page' do
+      group = Group.create!(title: "Work Friends")
+      person1 = group.people.create!(name: "Sara")
+      person2 = group.people.create!(name: "George")
+
+      visit groups_path
+
+      click_link "Edit Group"
+
+      expect(current_path).to eq(edit_group_path(group))
+    end
   end
 end

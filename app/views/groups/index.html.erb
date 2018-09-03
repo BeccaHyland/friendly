@@ -9,8 +9,7 @@
       <% group.people.each do |person| %>
         <ul> <%= link_to person.name, edit_group_person_path(group, person) %> </ul>
       <% end %>
-      <%= link_to "Edit Group Title", edit_group_path(group) %>
-      <%= link_to "Delete", group_path(group), method: "delete" %>
+      <%= link_to "Edit Group", edit_group_path(group) %>
     </li>
   <% end %>
 </ul>
