@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      flash[:success] = "#{@group.title} added!"
+      flash[:success] = "#{@group.title} Group created!"
       redirect_to groups_path
     else
       render :new
@@ -18,6 +18,18 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+    @group.update(group_params)
+    if @group.save
+      flash[:success] = "#{@group.title} Group updated!"
+      redirect_to groups_path
+    else
+      render :edit
+    end
   end
 
   private

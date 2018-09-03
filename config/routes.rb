@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'dashboards#index'
 
   resources :people, only: [:index, :show]
-  resources :groups, only: [:index, :new, :create, :edit, :destroy] do
+  resources :groups do
     resources :people
   end
 
