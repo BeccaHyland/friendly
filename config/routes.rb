@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'people/index'
-
-  get 'people/show'
-
   # get 'dashboards/index' <-- why?
   root 'dashboards#index'
 
