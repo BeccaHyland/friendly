@@ -1,0 +1,15 @@
+<h1>My Groups</h1>
+<%= link_to "Create New Group", new_group_path %>
+<p>To change a person's group, click a person's name below.</p>
+
+<ul>
+  <% @groups.each do |group| %>
+    <li class=group_<%= group.id %>>
+      <%= group.title %>
+      <% group.people.each do |person| %>
+        <ul> <%= link_to person.name, edit_group_person_path(group, person) %> </ul>
+      <% end %>
+      <%= link_to "Edit Group", edit_group_path(group) %>
+    </li>
+  <% end %>
+</ul>
