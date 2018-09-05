@@ -1,0 +1,18 @@
+<p> Don't have any Goals for your People yet? Click <%= link_to "here", new_goal_path %> to create a Goal first.</p>
+
+<%= form_for @goalpost do |f| %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.label :person_goal_id %>
+  <%= f.collection_select :person_goal_id, PersonGoal.all, :id, :title %>
+  <%= f.label :minutes %>
+  <%= f.integer :minutes %>
+
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+
+
+  <%= f.submit %>
+
+<% end %>

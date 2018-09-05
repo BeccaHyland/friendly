@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :goals
+  resources :goalposts
   resources :person_goals, only: [] do
-    resources :goalposts
+    resources :goalposts, only: [:index]
   end
 
   resources :users, only: [:new, :create, :show]
