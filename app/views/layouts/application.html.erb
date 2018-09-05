@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <% unless current_user %>
+      <p><%= link_to 'Sign up to be a new Friendly user', new_user_path %></p>
+      <p><%= link_to 'I already have a Friendly account', login_path %></p>
+    <% else %>
+      <p><%= link_to 'Logout', logout_path %></p>
+    <% end %>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
