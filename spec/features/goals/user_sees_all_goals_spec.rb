@@ -26,6 +26,7 @@ describe 'user can see all goals' do
       click_link "#{person1.name}"
 
       expect(current_path).to eq(person_path(person1))
+      expect(page).to have_content(person1.name)
     end
   end
 end
