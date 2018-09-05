@@ -3,5 +3,5 @@ class PersonGoal < ApplicationRecord
   belongs_to :goal
   has_many :goalposts
 
-  validates_presence_of :title, :person_id, :goal_id
+  validates_presence_of :person_id, :goal_id
 end
