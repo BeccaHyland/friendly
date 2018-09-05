@@ -3,6 +3,20 @@ class GoalsController < ApplicationController
     @goals = Goal.all
   end
 
+  def new
+    @goal = Goal.new
+  end
+
+  def create
+    @goal = Goal.new(goal_params)
+    if @goal.save
+      flash[:success] = "#{@goal.description} Goal created!"
+      redirect_to goals_path
+    else
+      render :new
+    end
+  end
+
   def edit
     @goal = Goal.find(params[:id])
   end
