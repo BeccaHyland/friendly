@@ -1,0 +1,7 @@
+<h2>Edit Goal</h2>
+<p> Enter the new title and frequency for this Goal.</p>
+
+<%= render partial: "form" %>
+
+<p>Delete Goal here. Don't worry, this won't delete People who have this Goal.</p>
+<%= link_to "Delete Goal", goal_path(@goal), method: "delete" %>
