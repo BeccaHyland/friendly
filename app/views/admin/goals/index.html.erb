@@ -1,1 +1,11 @@
-<h2>Admin Goals</h2>
+<div class="title">
+  <h2>Admin Goals Index</h2>
+</div>
+
+<h4>See Goals for All Users Here</h4>
+
+<% @goals.each do |goal| %>
+  <p class=goal_<%= goal.id %>>
+    <li>|Goal| <%= goal.description %>
+  </li>
+<% end %>
