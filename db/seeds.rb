@@ -10,8 +10,8 @@ user_1 = User.create(username: "malcolm", password: "captain", role: 1)
 
 user_2 = User.create(username: "zoe", password: "firstmate", role: 0)
 
-goal_1 = Goal.create!(description: "a quiet drink", frequency: "annually")
-goal_2 = Goal.create!(description: "be regular heroes", frequency: "weekly")
+goal_1 = Goal.create!(description: "Happy Hour", frequency: "monthly")
+goal_2 = Goal.create!(description: "Face Time", frequency: "weekly")
 group_1 = Group.create!(title: "Crewmates")
 group_2 = Group.create!(title: "Family")
 person_1 = Person.create!(name: "The Man They Call Jayne", group_id: group_1.id)
