@@ -1,6 +1,8 @@
-<h1>My Groups</h1>
+<div class="title">
+  <h1>My Groups</h1>
+</div>
 <%= link_to "Create New Group", new_group_path %>
-<p>To change a person's group, click a person's name below.</p>
+<h3>To change a person's group, click a person's name below.</h3>
 
 <ul>
   <% @groups.each do |group| %>

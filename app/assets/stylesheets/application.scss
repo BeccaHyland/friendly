@@ -5,11 +5,24 @@ body {
   background-color: #41D3BD
 }
 
+.navbar-brand {
+  font-family: 'Monoton', cursive;
+  font-size: 3rem;
+}
+
 .navbar {
   margin-bottom: 30px;
+}
+
+.navbar-left {
+  padding-right: 1.5rem;
 }
 
 section {
   margin-top: 60px;
   margin-bottom: 60px;
+}
+
+.title {
+  font-family: 'Monoton', cursive;
 }

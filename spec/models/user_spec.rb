@@ -7,6 +7,12 @@ describe User, type: :model do
     it {should validate_presence_of(:password)}
   end
 
+  describe 'associations' do
+    it {should have_many :person_goals}
+    it {should have_many(:goals).through(:person_goals)}
+    it {should have_many(:people).through(:person_goals)}
+  end
+
   describe 'roles' do
     it 'can be created as an admin' do
       user = User.create(username: "jean", password: "phoenix", role: 1)

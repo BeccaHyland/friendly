@@ -1,7 +1,9 @@
-<h1>My People</h1>
+<div class="title">
+  <h1>My People</h1>
+</div>
 <%= link_to "Add New Person", new_person_path %>
 
-<p>Click on a Person to see current Goals.</p>
+<h3>Click on a Person to see current Goals.</h3>
 
 <ul>
   <% @people.sort.each do |person| %>

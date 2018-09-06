@@ -44,7 +44,7 @@ describe 'registration and login' do
       user = User.create(username: "Carmen", password: "friendlyyy")
       visit root_path
 
-      click_on 'I already have a Friendly account'
+      click_on 'Login'
 
       expect(current_path).to eq(login_path)
 
@@ -61,7 +61,7 @@ describe 'registration and login' do
       user = User.create(username: "Carmen", password: "friendlyyy")
       visit root_path
 
-      click_on 'I already have a Friendly account'
+      click_on 'Login'
 
       expect(current_path).to eq(login_path)
 

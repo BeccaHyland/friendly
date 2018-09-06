@@ -6,17 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway" rel="stylesheet">
   </head>
 
   <body>
-    <!-- <% unless current_user %> -->
-      <p><%= link_to 'Sign up to be a new Friendly user', new_user_path %></p>
-      <p><%= link_to 'I already have a Friendly account', login_path %></p>
-    <!-- <% else %> -->
-      <p><%= link_to 'Logout', logout_path %></p>
-    <!-- <% end %> -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Home</a>
+      <a href="#" class="navbar-left"><img src="/images/logo.png"></a>
+      <a class="navbar-brand" href="/">Friendly</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,14 +20,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/goalposts/new">Log New Goalpost<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/goalposts/new">Log New Goalpost</a>
+            <a class="nav-link" href="/people">My People</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/goals">My Goals</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              My Groups
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Action</a>
@@ -40,14 +39,17 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
+          <% unless current_user %>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="/users/new">Sign up to be a new Friendly user</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <% else %>
+          <a class="nav-link" href="/logout">Logout</a>
+          <% end %>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
       </div>
     </nav>
 
@@ -59,15 +61,17 @@
 
         <div class="col-lg-4">
           <div class="sidebar">
-            <h3>My Sidebar</h3>
-              <p>Click on things</p>
+            <div class="title">
+              <h3>My Account</h3>
+            </div>
+              <p>Stay Friendly!</p>
               <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
-                <button type="button" class="btn btn-secondary">1</button>
-                <button type="button" class="btn btn-secondary">2</button>
+                <button type="button" class="btn btn-secondary">(option)</button>
+                <button type="button" class="btn btn-secondary">(option)</button>
 
                 <div class="btn-group" role="group">
                   <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    (dropdown option)
                   </button>
                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <a class="dropdown-item" href="#">Dropdown link</a>
